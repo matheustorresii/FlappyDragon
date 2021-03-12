@@ -50,6 +50,20 @@ class GameScene: SKScene {
                                  y: floor.size.height/2)
         floor.size = CGSize(width: size.width*2, height: 200)
         addChild(floor)
+        
+        let invisibleFloor = SKNode()
+        invisibleFloor.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: size.width, height: 1))
+        invisibleFloor.physicsBody?.isDynamic = false
+        invisibleFloor.position = CGPoint(x: size.width/2, y: size.height - gameArea)
+        invisibleFloor.zPosition = 2
+        addChild(invisibleFloor)
+        
+        let invisibleRoof = SKNode()
+        invisibleRoof.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: size.width, height: 1))
+        invisibleRoof.physicsBody?.isDynamic = false
+        invisibleRoof.position = CGPoint(x: size.width/2, y: size.height)
+        invisibleRoof.zPosition = 2
+        addChild(invisibleRoof)
     }
     
     private func addIntro() {
@@ -104,19 +118,62 @@ class GameScene: SKScene {
         addChild(scoreLabel)
     }
     
+    private func spawnEnemies() {
+        let topSafeArea = (UIApplication.shared.windows.first?.safeAreaInsets.top)!
+        let initialPosition = CGFloat(Int.random(in: Int(topSafeArea)..<Int(gameArea/2)))
+        let enemyNumber = Int.random(in: 1...4)
+        let enemiesDistance = player.size.width * 2
+        
+        let enemyTop = SKSpriteNode(imageNamed: "enemytop\(enemyNumber)")
+        let enemyWidth = enemyTop.size.width
+        let enemyHeight = enemyTop.size.height
+        
+        enemyTop.position = CGPoint(x: size.width + enemyWidth/2,
+                                    y: size.height - initialPosition + enemyHeight/2)
+        enemyTop.zPosition = 1
+        enemyTop.size = CGSize(width: enemyWidth * 1.5, height: enemyHeight * 1.5)
+        enemyTop.physicsBody = SKPhysicsBody(rectangleOf: enemyTop.size)
+        enemyTop.physicsBody?.isDynamic = false
+        
+        let enemyBottom = SKSpriteNode(imageNamed: "enemybottom\(enemyNumber)")
+        enemyBottom.position = CGPoint(x: size.width + enemyWidth/2,
+                                       y: enemyTop.position.y - enemyTop.size.height - enemiesDistance)
+        enemyBottom.zPosition = 1
+        enemyBottom.size = CGSize(width: enemyWidth * 1.5, height: enemyHeight * 1.5)
+        enemyBottom.physicsBody = SKPhysicsBody(rectangleOf: enemyBottom.size)
+        enemyBottom.physicsBody?.isDynamic = false
+        
+        let distance = size.width + enemyWidth
+        let duration = Double(distance)/velocity
+        let moveAction = SKAction.moveBy(x: -distance, y: 0, duration: duration)
+        let removeAction = SKAction.removeFromParent()
+        let sequenceAction = SKAction.sequence([moveAction, removeAction])
+        
+        enemyBottom.run(sequenceAction)
+        enemyTop.run(sequenceAction)
+        
+        addChild(enemyTop)
+        addChild(enemyBottom)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !gameFinished {
             if !gameStarted {
                 // Menu
                 intro.removeFromParent()
                 addScore()
-                
+
                 player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2 - 10)
                 player.physicsBody?.isDynamic = true
                 player.physicsBody?.allowsRotation = true
                 player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: flyForce))
-                
+
                 gameStarted = true
+                
+                Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true) { [weak self] timer in
+                    guard let self = self else { return }
+                    self.spawnEnemies()
+                }
             } else {
                 // Playing
                 player.physicsBody?.velocity = CGVector.zero
