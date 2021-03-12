@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="fdz-wv-RRM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="nWc-AE-uai">
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
-                            <constraint firstItem="fdz-wv-RRM" firstAttribute="bottom" secondItem="Bcu-3y-fUS" secondAttribute="bottom" constant="39" id="3tu-e9-yf6"/>
-                            <constraint firstItem="fdz-wv-RRM" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="6ha-c4-Dsj"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="fdz-wv-RRM" secondAttribute="trailing" id="8Rx-jv-7Df"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="top" secondItem="fdz-wv-RRM" secondAttribute="top" constant="39" id="bEK-Cm-Pcg"/>
+                            <constraint firstItem="nWc-AE-uai" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="BHX-wb-mfM"/>
+                            <constraint firstItem="nWc-AE-uai" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="V6C-zx-VhA"/>
+                            <constraint firstItem="nWc-AE-uai" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="bIt-Su-pQW"/>
+                            <constraint firstItem="nWc-AE-uai" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="eED-Zf-BnG"/>
                         </constraints>
                     </view>
                 </viewController>

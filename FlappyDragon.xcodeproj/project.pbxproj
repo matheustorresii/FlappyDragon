@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC33A50025FBD7F600EA3763 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC33A4FF25FBD7F600EA3763 /* Launch Screen.storyboard */; };
 		FCFC035E25FBA79300C1726B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC035D25FBA79300C1726B /* AppDelegate.swift */; };
 		FCFC036425FBA79300C1726B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC036325FBA79300C1726B /* GameScene.swift */; };
 		FCFC036625FBA79300C1726B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC036525FBA79300C1726B /* GameViewController.swift */; };
 		FCFC036925FBA79300C1726B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCFC036725FBA79300C1726B /* Main.storyboard */; };
 		FCFC036B25FBA79500C1726B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCFC036A25FBA79500C1726B /* Assets.xcassets */; };
-		FCFC037525FBA80C00C1726B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCFC037425FBA80C00C1726B /* Launch Screen.storyboard */; };
 		FCFC037F25FBAA1500C1726B /* score.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FCFC037C25FBAA1500C1726B /* score.mp3 */; };
 		FCFC038025FBAA1500C1726B /* hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FCFC037D25FBAA1500C1726B /* hit.mp3 */; };
 		FCFC038125FBAA1500C1726B /* music.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FCFC037E25FBAA1500C1726B /* music.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC33A4FF25FBD7F600EA3763 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		FCFC035A25FBA79300C1726B /* FlappyDragon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyDragon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCFC035D25FBA79300C1726B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCFC036325FBA79300C1726B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -26,7 +27,6 @@
 		FCFC036825FBA79300C1726B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCFC036A25FBA79500C1726B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCFC036C25FBA79500C1726B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCFC037425FBA80C00C1726B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		FCFC037C25FBAA1500C1726B /* score.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = score.mp3; sourceTree = "<group>"; };
 		FCFC037D25FBAA1500C1726B /* hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit.mp3; sourceTree = "<group>"; };
 		FCFC037E25FBAA1500C1726B /* music.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = music.m4a; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				FCFC036725FBA79300C1726B /* Main.storyboard */,
-				FCFC037425FBA80C00C1726B /* Launch Screen.storyboard */,
+				FC33A4FF25FBD7F600EA3763 /* Launch Screen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -149,10 +149,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC33A50025FBD7F600EA3763 /* Launch Screen.storyboard in Resources */,
 				FCFC036925FBA79300C1726B /* Main.storyboard in Resources */,
 				FCFC036B25FBA79500C1726B /* Assets.xcassets in Resources */,
 				FCFC038125FBAA1500C1726B /* music.m4a in Resources */,
-				FCFC037525FBA80C00C1726B /* Launch Screen.storyboard in Resources */,
 				FCFC037F25FBAA1500C1726B /* score.mp3 in Resources */,
 				FCFC038025FBAA1500C1726B /* hit.mp3 in Resources */,
 			);
